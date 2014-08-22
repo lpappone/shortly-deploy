@@ -1,0 +1,28 @@
+Fri Aug 22 2014 15:00:25 GMT-0700 (PDT):
+{ [TypeError: Object #<Subscription> has no method 'getPortalUrl']
+  stack: [Getter/Setter],
+  __frame: 
+   { name: 'portalGitInitInstruction__15',
+     line: 670,
+     file: '/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/asm/websites/websitesclient._js',
+     prev: 
+      { name: 'fallbackToPortal',
+        line: 692,
+        file: '/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/asm/websites/websitesclient._js',
+        prev: [Object],
+        active: false,
+        offset: 2,
+        col: 6 },
+     active: true,
+     offset: 12,
+     col: 8 },
+  rawStack: [Getter] }
+TypeError: Object #<Subscription> has no method 'getPortalUrl'
+    at portalGitInitInstruction__15 (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/asm/websites/websitesclient._js:684:54)
+    at portalGitInitInstruction__15 (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/asm/websites/websitesclient._js:682:8)
+    at fallbackToPortal (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/asm/websites/websitesclient._js:694:6)
+    at getPublishingUser__16 (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/asm/websites/websitesclient._js:728:8)
+    at LinkedRevisionControlClient_prototype__addRemotesToLocalGitRepo__5 (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/util/git/linkedrevisioncontrol._js:177:29)
+    at GitClient_prototype_deploy__7 (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/util/git/linkedrevisioncontrol._js:214:2)
+    at __4 (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/asm/site._js:268:12)
+

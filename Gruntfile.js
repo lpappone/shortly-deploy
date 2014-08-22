@@ -98,7 +98,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
-      // add your production server task here
+      grunt.log.writeIn('Starting server on port' + port)
+      require('./server.js').listen(port);
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
