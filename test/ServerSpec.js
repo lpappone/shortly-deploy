@@ -11,7 +11,7 @@ var Link = require('../app/models/link');
 // NOTE: these tests are designed for mongo!
 /////////////////////////////////////////////////////
 
-xdescribe('', function() {
+describe('', function() {
 
   beforeEach(function(done) {
     // Log out currently signed in user
@@ -179,8 +179,9 @@ xdescribe('', function() {
           'password': 'Svnh' })
         .expect(302)
         .expect(function() {
-          User.findOne({'username': 'Svnh'})
+          User.find({'username': 'Svnh'})
             .exec(function(err,user) {
+              console.log('BAWLS', user, err);
               expect(user.username).to.equal('Svnh');
             });
         })

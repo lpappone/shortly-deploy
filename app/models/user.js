@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    bcrypt   = require('bcrypt'),
+    bcrypt   = require('bcrypt-nodejs'),
     Q        = require('q'),
     SALT_WORK_FACTOR  = 10;
 
@@ -59,7 +59,7 @@ UserSchema.pre('save', function (next) {
   });
 });
 
-module.exports = mongoose.model('users', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
 
 // var db = require('../config');
 // var bcrypt = require('bcrypt-nodejs');
