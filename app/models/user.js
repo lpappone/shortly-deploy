@@ -18,7 +18,7 @@ var UserSchema = new mongoose.Schema({
   salt: String
 });
 
-UserSchema.methods.comparePasswords = function (candidatePassword) {
+UserSchema.method('comparePasswords', function (candidatePassword) {
   var defer = Q.defer();
   var savedPassword = this.password;
   bcrypt.compare(candidatePassword, savedPassword, function (err, isMatch) {
@@ -29,7 +29,7 @@ UserSchema.methods.comparePasswords = function (candidatePassword) {
     }
   });
   return defer.promise;
-};
+});
 
 UserSchema.pre('save', function (next) {
   var user = this;
@@ -46,7 +46,7 @@ UserSchema.pre('save', function (next) {
     }
 
     // hash the password along with our new salt
-    bcrypt.hash(user.password, salt, function(err, hash) {
+    bcrypt.hash(user.password, salt, function () {}, function(err, hash) {
       if (err) {
         return next(err);
       }

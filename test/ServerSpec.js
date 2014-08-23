@@ -1,3 +1,4 @@
+/* globals require, describe, beforeEach, it */
 var request = require('supertest');
 var express = require('express');
 var expect = require('chai').expect;
@@ -179,9 +180,9 @@ describe('', function() {
           'password': 'Svnh' })
         .expect(302)
         .expect(function() {
-          User.find({'username': 'Svnh'})
+          User.findOne({'username': 'Svnh'})
             .exec(function(err,user) {
-              console.log('BAWLS', user, err);
+              console.log('cb', user, err);
               expect(user.username).to.equal('Svnh');
             });
         })
