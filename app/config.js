@@ -1,7 +1,7 @@
-var Bookshelf = require('bookshelf');
-var path = require('path');
+var mongoose = require('mongoose');
+// var path = require('path');
 
-var db = Bookshelf.initialize({
+var db = mongoose.Schema({
   client: 'sqlite3',
   connection: {
     host: '127.0.0.1',
@@ -12,6 +12,11 @@ var db = Bookshelf.initialize({
     filename: path.join(__dirname, '../db/shortly.sqlite')
   }
 });
+
+
+var Links = mongoose.model('Link', db);
+
+var Users = mongoose.model('User', db);
 
 db.knex.schema.hasTable('urls').then(function(exists) {
   if (!exists) {
